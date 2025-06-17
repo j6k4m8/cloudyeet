@@ -2,7 +2,7 @@
 
 Turn any Python function into an AWS Lambda with a single decorator. Automatically deploys, updates, and tears down remote Lambdas — all from your local Python code.
 
-## ✨ Features
+## Features
 
 -   `@lambda_yeet(...)` decorator auto-deploys functions to AWS Lambda
 -   Detects code changes and **re-uploads** transparently
@@ -13,7 +13,7 @@ Turn any Python function into an AWS Lambda with a single decorator. Automatical
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ```bash
 uv venv
