@@ -28,20 +28,14 @@ Requires:
 
 ---
 
-## 🧪 Example Usage
+## Example Usage
 
 ```python
-from cloudyeet import lambda_yeet, lambda_delete
+from cloudyeet import lambda_yeet
 
-@lambda_yeet(
-    function_name="multiply-far-away",
-    timeout_sec=90,
-    memory_mb=256,
-    requirements=["numpy"]
-)
+@lambda_yeet("multiply-far-away")
 def remote_multiply(x, y):
-    import numpy as np
-    return int(np.array([x]) * y)[0]
+    return x * y
 
 # Call it — executes in AWS Lambda!
 print(remote_multiply(6, 7))  # ➜ 42
@@ -50,9 +44,10 @@ print(remote_multiply(6, 7))  # ➜ 42
 lambda_delete("multiply-far-away")
 ```
 
+
 ---
 
-## 🛠️ API Reference
+## API Reference
 
 ### `@lambda_yeet(...)`
 
@@ -79,7 +74,7 @@ lambda_delete("multiply-far-away")
 
 ---
 
-## 🔐 AWS Permissions
+## AWS Permissions
 
 You need permission to:
 
@@ -90,7 +85,7 @@ The package will create a role named `CloudYeetExecutionRole` if it doesn’t ex
 
 ---
 
-## 💡 How it Works
+## How it Works
 
 1. Your function is serialized using `cloudpickle`
 2. A small `lambda_handler` is generated that unpickles and runs it
@@ -99,7 +94,7 @@ The package will create a role named `CloudYeetExecutionRole` if it doesn’t ex
 
 ---
 
-## 🧹 Cleanup
+## Cleanup
 
 Functions are tracked by hash. When you change your function, it's re-uploaded. To manually delete:
 
@@ -109,7 +104,7 @@ lambda_delete("your-function-name")
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 cloudyeet/
