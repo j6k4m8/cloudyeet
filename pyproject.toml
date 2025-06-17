@@ -1,0 +1,7 @@
+[project]
+name = "cloudyeet"
+version = "0.1.0"
+description = "Quickly provision and manage serverless cloud functions."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["boto3>=1.38.37", "cloudpickle>=3.1.1"]
