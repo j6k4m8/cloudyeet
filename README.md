@@ -1,5 +1,8 @@
 # ☁️ cloudyeet
 
+> [!WARNING]
+> I think this is still kinda broken but i'm open-sourcing it in case you feel like using it, breaking it, or fixing it
+
 Turn any Python function into an AWS Lambda with a single decorator. Automatically deploys, updates, and tears down remote Lambdas — all from your local Python code.
 
 ## Features
